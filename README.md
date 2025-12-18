@@ -1,4 +1,4 @@
-# Customer Churn Prediction Model 🤖
+# BizLens-Analytics Project 🤖
 
 ## 📌 Project Overview:
 This project focuses on predicting customer churn for a telco dataset and exploring strategies for proactive customer retention. The goal is to build a dynamic pipeline that can handle different CSV files of similar format, train machine learning models, and present actionable insights.
