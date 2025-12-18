@@ -1,7 +1,7 @@
 # BizLens-Analytics Project 🤖
 
 ## 📌 Project Overview:
-This project focuses on giving the customer detailed analysis of the financial aspects of the buniness and churn rate of their services and exploring strategies for proactive customer retention and financial growth. The goal is to build a dynamic pipeline that can handle different CSV files of similar format, train machine learning models, and present actionable insights.
+This project focuses on giving the customer detailed analysis of the financial aspects of the business and churn rate of their services and exploring strategies for proactive customer retention and financial growth. The goal is to build a dynamic pipeline that can handle different CSV files of similar format, train machine learning models, and present actionable insights.
 
 The project is work in progress and currently under development.
 
