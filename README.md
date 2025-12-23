@@ -15,4 +15,4 @@ BizLens-Analytics is a powerful, interactive web application designed to transfo
 5) Use powerful Machine Learning models and algorithms for analysis.
 
 > [!CAUTION]
-> **Warning:** This project is currently under development.
+> **Note:** This project is currently under development.
