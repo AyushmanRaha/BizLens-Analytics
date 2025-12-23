@@ -1,19 +1,16 @@
-# BizLens-Analytics Project 🤖
+# BizLens-Analytics Project 
 
-## 📌 Project Overview:
-This project focuses on giving the customer detailed analysis of the financial aspects of the business and churn rate of their services and exploring strategies for proactive customer retention and financial growth. The goal is to build a dynamic pipeline that can handle different CSV files of similar format, train machine learning models, and present actionable insights.
+## 📊 Project Overview:
+BizLens-Analytics is a powerful, interactive web application designed to transform raw company data into actionable business intelligence. By leveraging machine learning and advanced data visualization, it provides stakeholders with a "lens" into their annual performance—identifying financial trends, predicting customer churn, and offering data-backed suggestions for operational improvement.
 
-The project is work in progress and currently under development.
+> [!CAUTION]
+> **Warning:** This project is currently under development.
 
-## 🎯 Objectives:
-1. Build a machine learning pipeline that dynamically ingests data similar in format to the IBM telco CSV data.
-
-2. Structure the code into functional Python modules with Jupyter notebooks for demonstration, execution, and visualization.
-
-3. Automate execution via a script to run the pipeline and generate outputs.
-
-4. Evaluate and compare model performance, highlight data issues, and provide churn insights.
-
-5. Extend predictions into actionable retention strategies for high-risk customers.
+## 💵 Key Features:
+1) Financial Health Dashboard: Instant visualization of annual revenue, expenses, and profit margins.
+2) Churn Prediction: Utilizes predictive modeling to identify at-risk customer segments before they leave.
+3) Automated Insights: Smart suggestions for OpEx reduction and supply chain optimization based on historical data.
+4) Interactive Analytics: Dynamic filtering and "what-if" scenarios to see how different variables impact the bottom line.
+5) Use powerful Machine Learning models and algorithms for analysis.
 
 ## 🚧🛠️ This README will evolve as the project matures.
