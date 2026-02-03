@@ -1,0 +1,19 @@
+# --- Python & Virtual Environment ---
+venv/
+__pycache__/
+*.pyc
+.env
+
+# --- Mac OS Junk ---
+.DS_Store
+
+# --- Data ---
+*.csv
+*.xlsx
+*.json
+
+# --- Streamlit Secrets ---
+.streamlit/secrets.toml
+
+# --- IDE Settings (VS Code) ---
+.vscode/
