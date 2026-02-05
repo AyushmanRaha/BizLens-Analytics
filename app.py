@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import time
 
-# --- 1. VISUAL CONFIGURATION (NON-NEGOTIABLE DARK THEME) ---
+# --- 1. VISUAL CONFIGURATION  ---
 st.set_page_config(
     page_title="BizLens Analytics",
     page_icon="👁️",
@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# --- 2. SESSION STATE MANAGEMENT (MOVED UP FOR UI LOGIC) ---
+# --- 2. SESSION STATE MANAGEMENT ---
 if 'data_uploaded' not in st.session_state:
     st.session_state['data_uploaded'] = False
 if 'df' not in st.session_state:
@@ -35,7 +35,7 @@ brand_content = (
     else '<p class="brand-text">Designed & Built by <span class="creator-highlight">Ayushman Raha</span></p>'
 )
 
-# Custom CSS for FAANG-style Aesthetics & Animated Branding
+# Custom CSS 
 st.markdown(f"""
     <style>
     /* Global Dark Theme Overrides */
@@ -313,7 +313,7 @@ else:
         <p class="subheader-text">End-to-End Retention Diagnostics • Strategic Intervention</p>
     """, unsafe_allow_html=True)
 
-    # --- TABS LAYOUT (Continue with your existing code) ---
+    # --- TABS LAYOUT  ---
     tab_overview, tab_analytics, tab_predict, tab_recommend = st.tabs([
         "Overview", 
         "Analytics", 
