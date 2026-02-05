@@ -3,9 +3,12 @@
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-v1.31-FF4B4B.svg)
 ![XGBoost](https://img.shields.io/badge/Model-XGBoost-orange.svg)
-![Status](https://img.shields.io/badge/Status-Production-green.svg)
 
-> **Live Demo:** [Link to your Streamlit App Here]
+> [!CAUTION]
+> ### ⚠️ This Project is Under Development
+> This repository is currently a work in progress. Features may be incomplete, APIs might change frequently, and you might encounter bugs.
+
+> **Live Demo:** [Will be updated soon]
 
 ##  Executive Summary
 **BizLens** is a vertical SaaS application designed to operationalize machine learning for customer retention. Unlike standard dashboards that simply visualize history, BizLens uses **XGBoost** to predict future churn risk and prescribes automated retention strategies.
@@ -41,3 +44,5 @@ graph LR
     C -- Yes --> E[Preprocessing Pipeline]
     E -->|SMOTE + Scaling| F[XGBoost Inference]
     F --> G[Streamlit Dashboard]
+
+
