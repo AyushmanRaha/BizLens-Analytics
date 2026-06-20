@@ -18,3 +18,7 @@ __pycache__/
 # --- IDE Settings (VS Code) ---
 .vscode/*.joblib
 models/
+
+# --- Trained model artifacts ---
+bizlens_churn_pipeline.joblib
+*.joblib
