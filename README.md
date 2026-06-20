@@ -46,3 +46,31 @@ graph LR
     F --> G[Streamlit Dashboard]
 
 
+```
+
+## Local Setup
+
+The Streamlit app expects a trained pipeline named `bizlens_churn_pipeline.joblib` in the project root. This binary is intentionally not committed; generate it locally before launching the app.
+
+```bash
+cd ~/Downloads
+git clone https://github.com/AyushmanRaha/BizLens-Analytics.git
+cd BizLens-Analytics
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python src/train_model.py --data data/customer_churn_data.csv
+streamlit run app.py
+```
+
+Place the Telco customer churn dataset at `data/customer_churn_data.csv`, or pass another CSV path with `--data`.
+
+## Training the Model
+
+Run the training script from the project root:
+
+```bash
+python src/train_model.py --data data/customer_churn_data.csv
+```
+
+The script trains the existing churn pipeline with numeric and categorical preprocessing, `OneHotEncoder(handle_unknown='ignore')`, `SMOTE`, and `XGBClassifier`. It drops `customerID` when present, cleans `TotalCharges` with `pd.to_numeric(..., errors='coerce')`, handles missing values inside the sklearn pipeline, prints train/test shapes and ROC AUC, and saves `bizlens_churn_pipeline.joblib` in the project root.
