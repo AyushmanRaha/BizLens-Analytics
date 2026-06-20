@@ -193,6 +193,7 @@ with st.sidebar:
             missing = etl.check_schema(raw_df)
             if not missing:
                 st.session_state['df'] = raw_df
+                st.session_state['processed_df'] = None
                 st.session_state['data_uploaded'] = True
                 st.session_state['show_guide'] = False # Auto-minimize guide
                 st.success("Data Loaded Successfully")
@@ -264,17 +265,33 @@ if not st.session_state['data_uploaded']:
 else:
     # ... (Keep your existing data processing code here) ...
     df = st.session_state['df']
-    if st.session_state['processed_df'] is None and pipeline:
+
+    if pipeline is None:
+        st.error("Model file not found: bizlens_churn_pipeline.joblib. Please place it in the project root or train/export the model first.")
+        st.stop()
+
+    if st.session_state['processed_df'] is None:
         with st.spinner("Running Inference Engine..."):
-            # Predict
-            probs = pipeline.predict_proba(df)[:, 1]
-            df['Churn_Probability'] = probs
-            df['Risk_Tier'] = np.where(probs > 0.75, 'Critical', 
-                                np.where(probs > 0.50, 'High', 
-                                np.where(probs > 0.25, 'Medium', 'Low')))
-            st.session_state['processed_df'] = df
+            try:
+                # Predict
+                probs = pipeline.predict_proba(df)[:, 1]
+            except Exception as e:
+                st.error(f"Inference failed while scoring the uploaded data: {e}")
+                st.stop()
+
+            scored_df = df.copy()
+            scored_df['Churn_Probability'] = probs
+            scored_df['Risk_Tier'] = np.where(probs > 0.75, 'Critical', 
+                                      np.where(probs > 0.50, 'High', 
+                                      np.where(probs > 0.25, 'Medium', 'Low')))
+            st.session_state['processed_df'] = scored_df
 
     scored_df = st.session_state['processed_df']
+
+    required_score_columns = {'Risk_Tier', 'Churn_Probability'}
+    if not isinstance(scored_df, pd.DataFrame) or not required_score_columns.issubset(scored_df.columns):
+        st.error("Scored data is unavailable or incomplete. Please reset the app and upload the dataset again.")
+        st.stop()
 
     # --- NEW ANIMATED HEADING ---
     st.markdown("""
